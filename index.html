@@ -10,11 +10,14 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --ink: #1A1A1A;
-    --paper: #F7F3EE;
-    --gold: #C9A87C;
-    --brown: #6B5E4E;
-    --sand: #E8E0D5;
+    --ink: #5C4A3A;
+    --paper: #FFFDF9;
+    --gold: #C8965A;
+    --gold-light: #E2B97E;
+    --brown: #9C8270;
+    --sand: #F5EFE6;
+    --dark-bg: #F0E8DA;
+    --dark-text: #4A3728;
     --white: #FFFFFF;
     --serif: 'Noto Serif JP', serif;
     --sans: 'Noto Sans JP', sans-serif;
@@ -44,12 +47,11 @@
   }
 
   .section--dark {
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--dark-bg);
+    color: var(--dark-text);
     max-width: 100%;
     padding: 80px 24px;
-  }
-  .section--dark .inner {
+  }  .section--dark .inner {
     max-width: 680px;
     margin: 0 auto;
   }
@@ -93,10 +95,9 @@
 
   /* ─── FIRST VIEW ─── */
   .fv {
-    background: var(--ink);
-    color: var(--paper);
-    min-height: 100svh;
-    display: flex;
+    background: var(--dark-bg);
+    color: var(--dark-text);
+    min-height: 100svh;    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -141,7 +142,7 @@
 
   .fv__sub {
     font-size: 13px;
-    color: rgba(247,243,238,0.65);
+    color: var(--brown);
     line-height: 2;
     margin-bottom: 48px;
     font-weight: 300;
@@ -160,7 +161,7 @@
   }
   .fv__cta:hover {
     background: var(--gold);
-    color: var(--ink);
+    color: var(--white);
   }
 
   .fv__scroll {
@@ -170,7 +171,7 @@
     transform: translateX(-50%);
     font-size: 9px;
     letter-spacing: 0.3em;
-    color: rgba(247,243,238,0.35);
+    color: var(--brown);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -181,7 +182,7 @@
     display: block;
     width: 1px;
     height: 32px;
-    background: rgba(201,168,124,0.4);
+    background: var(--gold-light);
   }
 
   /* ─── PROBLEM ─── */
@@ -226,12 +227,12 @@
     border-left: 2px solid var(--gold);
     padding: 20px 24px;
     margin: 32px 0;
-    background: rgba(201,168,124,0.06);
+    background: rgba(200,150,90,0.08);
   }
   .agit__box p {
     font-size: 13px;
     line-height: 2;
-    color: var(--brown);
+    color: var(--ink);
     margin: 0;
   }
 
@@ -280,7 +281,7 @@
   }
 
   .sol__philosophy {
-    border: 1px solid rgba(201,168,124,0.35);
+    border: 1px solid rgba(200,150,90,0.35);
     padding: 32px 28px;
     margin: 36px 0;
   }
@@ -288,7 +289,7 @@
     font-family: var(--serif);
     font-size: 15px;
     line-height: 2.1;
-    color: var(--paper);
+    color: var(--dark-text);
   }
 
   /* ─── OFFER / DIFF ─── */
@@ -325,7 +326,7 @@
     border-left: 3px solid var(--gold);
     padding: 16px 20px;
     margin: 36px 0;
-    color: var(--paper);
+    color: var(--dark-text);
   }
 
   .narrow__grid {
@@ -337,8 +338,8 @@
   .narrow__col {
     padding: 28px 20px;
   }
-  .narrow__col--yes { background: rgba(201,168,124,0.12); }
-  .narrow__col--no  { background: rgba(26,26,26,0.06); }
+  .narrow__col--yes { background: rgba(200,150,90,0.12); }
+  .narrow__col--no  { background: rgba(92,74,58,0.06); }
   .narrow__col h4 {
     font-size: 11px;
     letter-spacing: 0.2em;
@@ -346,19 +347,19 @@
     font-weight: 500;
   }
   .narrow__col--yes h4 { color: var(--gold); }
-  .narrow__col--no  h4 { color: rgba(247,243,238,0.4); }
+  .narrow__col--no  h4 { color: var(--brown); }
   .narrow__col ul {
     list-style: none;
     font-size: 12px;
     line-height: 2;
   }
-  .narrow__col--yes ul { color: var(--paper); }
-  .narrow__col--no  ul { color: rgba(247,243,238,0.45); }
+  .narrow__col--yes ul { color: var(--dark-text); }
+  .narrow__col--no  ul { color: var(--brown); }
   .narrow__col ul li::before {
     margin-right: 6px;
   }
   .narrow__col--yes ul li::before { content: '○'; color: var(--gold); }
-  .narrow__col--no  ul li::before { content: '×'; }
+  .narrow__col--no  ul li::before { content: '×'; color: var(--brown); }
 
   /* ─── VOICE / EVIDENCE ─── */
   .voice__item {
@@ -420,7 +421,7 @@
   .cta-section {
     padding: 80px 24px;
     max-width: 100%;
-    background: var(--ink);
+    background: var(--dark-bg);
   }
   .cta-section .inner {
     max-width: 520px;
@@ -428,13 +429,13 @@
     text-align: center;
   }
   .cta-section h2 {
-    color: var(--paper);
+    color: var(--dark-text);
     font-size: clamp(18px, 5vw, 26px);
     margin-bottom: 12px;
   }
   .cta-section .cta-sub {
     font-size: 13px;
-    color: rgba(247,243,238,0.55);
+    color: var(--brown);
     margin-bottom: 48px;
     line-height: 2;
   }
@@ -452,7 +453,7 @@
   }
   .cta-block__desc {
     font-size: 12px;
-    color: rgba(247,243,238,0.5);
+    color: var(--brown);
     margin-bottom: 16px;
     line-height: 1.8;
   }
@@ -489,7 +490,7 @@
   }
   .btn-tel:hover {
     background: var(--gold);
-    color: var(--ink);
+    color: var(--white);
   }
 
   .divider {
@@ -497,7 +498,7 @@
     align-items: center;
     gap: 16px;
     margin: 20px 0;
-    color: rgba(247,243,238,0.2);
+    color: var(--brown);
     font-size: 11px;
     letter-spacing: 0.2em;
   }
@@ -505,13 +506,13 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: rgba(247,243,238,0.15);
+    background: var(--sand);
   }
 
   /* ─── FOOTER ─── */
   footer {
-    background: #111;
-    color: rgba(247,243,238,0.3);
+    background: var(--sand);
+    color: var(--brown);
     text-align: center;
     padding: 32px 24px;
     font-size: 11px;
@@ -525,8 +526,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: var(--ink);
-    border-top: 1px solid rgba(201,168,124,0.25);
+    background: var(--sand);
+    border-top: 1px solid var(--gold-light);
     padding: 12px 20px;
     display: flex;
     gap: 10px;
@@ -584,7 +585,7 @@
     本当に大丈夫ですか。
   </p>
 
-  <a href="#cta" class="fv__cta">詳しく見る</a>
+
 
   <div class="fv__scroll">SCROLL</div>
 </section>
@@ -627,7 +628,7 @@
       "回転"で成り立っています。
     </h2>
 
-    <p style="font-size:14px; color:rgba(247,243,238,0.75); line-height:2.1;">
+    <p style="font-size:14px; color:var(--brown); line-height:2.1;">
       悪意があるわけではありません。<br>
       ただ、ビジネスとして予約を詰め込むほど、一頭にかけられる時間と注意は薄くなる。それは構造的な話です。
     </p>
@@ -640,7 +641,7 @@
       </p>
     </div>
 
-    <p style="font-size:14px; color:rgba(247,243,238,0.75); line-height:2.1;">
+    <p style="font-size:14px; color:var(--brown); line-height:2.1;">
       愛犬にとって、トリミングは月に一度の非日常。その時間がどんな環境で、誰に、どんな目で見られて過ごされているか——そこに意識が向いたとき、「きれいになった」だけでは測れないものがあることに気づくはずです。
     </p>
   </div>
@@ -664,7 +665,7 @@
     </div>
     <div class="risk__card">
       <h3>トラウマは、一度の体験で刻まれる</h3>
-      <p>緊張や恐怖を感じた体験は、犬の記憶に深く残ります。「美容室が嫌い」になってからでは、取り戻すのに何倍もの時間がかかります。</p>
+      <p>緊張や恐怖を感じた体験は、愛犬の記憶に深く残ります。「美容室が嫌い」になってからでは、取り戻すのに何倍もの時間がかかります。</p>
     </div>
     <div class="risk__card">
       <h3>シニアになるほど、個別対応の差が出る</h3>
@@ -703,8 +704,8 @@
   <div class="inner">
     <span class="eyebrow">Our Philosophy</span>
 
-    <h2 class="sol__headline serif" style="color:var(--paper);">
-      ここは、あなたの犬の<br>
+    <h2 class="sol__headline serif" style="color:var(--dark-text);">
+      ここは、あなたの愛犬の<br>
       <span style="color:var(--gold);">「第二の家」</span>です。
     </h2>
 
@@ -727,7 +728,7 @@
     </div>
 
     <div class="rule"></div>
-    <p style="font-size:12px; color:rgba(247,243,238,0.5); text-align:center; letter-spacing:0.1em;">
+    <p style="font-size:12px; color:var(--brown); text-align:center; letter-spacing:0.1em;">
       完全担当制 ／ 同時施術なし ／ 健康チェック表お渡し
     </p>
   </div>
@@ -777,7 +778,7 @@
       価格や条件だけで選びたい方には、<br>正直向いていません。
     </div>
 
-    <p style="font-size:14px; color:rgba(247,243,238,0.7); line-height:2.1; margin-bottom:32px;">
+    <p style="font-size:14px; color:var(--brown); line-height:2.1; margin-bottom:32px;">
       当サロンは、月に一度きちんと通い続けてくださる方のために設計しています。関係性が積み重なるほど、できることが増えていく。それが完全担当制の本質だからです。
     </p>
 
@@ -804,7 +805,7 @@
       </div>
     </div>
 
-    <p style="font-size:13px; color:rgba(247,243,238,0.5); margin-top:24px; line-height:1.9; text-align:center;">
+    <p style="font-size:13px; color:var(--brown); margin-top:24px; line-height:1.9; text-align:center;">
       すべての人に選ばれなくていい。<br>
       この場所が必要な人に、ちゃんと届けばいい。
     </p>
@@ -937,15 +938,17 @@
       <span class="cta-block__label">お電話 ／ 直接予約したい方へ</span>
       <p class="cta-block__desc">
         「もう通うと決めている」「日程を直接相談したい」<br>
-        そんな方はお電話でどうぞ。<br>
-        営業時間内にご連絡ください。
+        そんな方はお電話でどうぞ。<br><br>
+        営業時間：9:00〜17:00<br>
+        土曜日：9:00〜13:00<br>
+        定休日：水曜日・日曜日・祝日
       </p>
       <a href="tel:072-370-5654" class="btn-tel">
         072-370-5654 に電話する
       </a>
     </div>
 
-    <p style="font-size:11px; color:rgba(247,243,238,0.3); margin-top:32px; line-height:2; text-align:center;">
+    <p style="font-size:11px; color:var(--brown); margin-top:32px; line-height:2; text-align:center;">
       犬飼さん家の犬の美容室<br>
       大阪府堺市 ／ 完全担当制・ひとりサロン<br>
       A級トリマー・経験15年
